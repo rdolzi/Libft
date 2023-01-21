@@ -1,3 +1,0 @@
-# Libft
-
-Test
