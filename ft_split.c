@@ -5,45 +5,55 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdolzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 14:16:33 by rdolzi            #+#    #+#             */
-/*   Updated: 2023/01/24 15:14:01 by rdolzi           ###   ########.fr       */
+/*   Created: 2023/01/25 16:32:56 by rdolzi            #+#    #+#             */
+/*   Updated: 2023/01/25 18:33:36 by rdolzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
-int	split_in_string(char c, char const *str)
+// FARE IL FREE
+size_t	get_word(const char *s, char c)
 {
-	int	i;
-	int	count;
-	int	slen;
+	size_t	ret;
 
-	i = 0;
-	count = 0;
-	slen = ft_strlen(str);
-	while (str[i] && i < slen)
+	ret = 0;
+	while (*s)
 	{
-		if (str[i] == c)
-			count++;
-		i++;
+		if (*s != c)
+		{
+			ret++;
+			while (*s && *s != c)
+				s++;
+		}
+		else
+			s++;
 	}
-	return (count);
+	return (ret);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
-	// ** alloco dopo che so quanti *
-	char	**strsplit;
+	char	**ret;
+	size_t	i;
+	size_t	len;
 
-	strsplit = (char **)malloc((split_in_string(c, s)) * sizeof(char *));
-	if (!strsplit)
+	if (!s)
 		return (NULL);
-
-}
-
-
-int main()
-{	
-
-	char	*c = "ciao come staicic";	
-	printf("%d", how_many_in_string('c',c));
+	i = 0;
+	ret = malloc(sizeof(char *) * (get_word(s, c) + 1));
+	if (!ret)
+		return (NULL);
+	while (*s)
+	{
+		if (*s != c)
+		{
+			len = 0;
+			while (*s && *s != c && ++len)
+				++s;
+			ret[i++] = ft_substr(s - len, 0, len);
+		}
+		else
+			s++;
+	}
+	ret[i] = 0;
+	return (ret);
 }
