@@ -6,13 +6,15 @@
 /*   By: rdolzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 12:25:04 by rdolzi            #+#    #+#             */
-/*   Updated: 2023/01/26 12:34:25 by rdolzi           ###   ########.fr       */
+/*   Updated: 2023/01/27 15:46:12 by rdolzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (!s)
+		return ;
 	while (*s)
 		ft_putchar_fd(*s++, fd);
 }
