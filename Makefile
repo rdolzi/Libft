@@ -15,7 +15,7 @@ ft_strnstr.c ft_isascii.c ft_memmove.c ft_strrchr.c ft_strtrim.c \
 ft_split.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 ft_itoa.c ft_strmapi.c ft_striteri.c \
 
-BONUS = 
+BONUS = ft_lstnew.c ft_lstadd_front.c \ 
 
 OBJS = ${SRCS:.c=.o}
 
