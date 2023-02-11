@@ -6,7 +6,7 @@
 /*   By: rdolzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:32:56 by rdolzi            #+#    #+#             */
-/*   Updated: 2023/01/27 16:03:31 by rdolzi           ###   ########.fr       */
+/*   Updated: 2023/02/11 17:53:13 by rdolzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -41,12 +41,20 @@ void	*free_all(char **s)
 	return (NULL);
 }
 
+char	**end_str(char **str, int i)
+{
+	str[i] = 0;
+	return (str);
+}
+
 char	**ft_split(const char *s, char c)
 {
 	char	**ret;
 	size_t	i;
 	size_t	len;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	ret = malloc(sizeof(char *) * (get_word(s, c) + 1));
 	if (!ret)
@@ -65,6 +73,5 @@ char	**ft_split(const char *s, char c)
 		else
 			s++;
 	}
-	ret[i] = 0;
-	return (ret);
+	return (end_str(ret, i));
 }
