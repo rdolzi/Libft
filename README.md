@@ -2,7 +2,7 @@
 
 In this project we recoded some functions of the C standard library as well as some other utility functions.
 
-Requirements: [link](./subject.pdf)
+Requirements: [subject.pdf](./subject.pdf)
 
 # Libft Functions
 
