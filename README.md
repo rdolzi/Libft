@@ -61,7 +61,7 @@ Requirements: [subject.pdf](./subject.pdf)
 - [`ft_lstiter`](ft_lstiter.c)	          - applies a function to each element of a list.
 - [`ft_lstmap`](ft_lstmap.c)	          - applies a function to each element of a list.
 
-
+Credit  to [Pasquale Rossi](https://github.com/pasqualerossi) for libft functions' description.
 # My Libft Results
 
 <img width="1914" alt="libft" src="./images/libft.png">
